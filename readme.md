@@ -1,4 +1,4 @@
-# UVIT PSF Extractor (`create_PSF`)
+# UVIT PSF Extractor (`create_UVIT_PSF`)
 
 An automated Python pipeline built to extract, analyze, and select Point Spread Functions (PSFs) from **UVIT (Ultra Violet Imaging Telescope)** FUV and NUV FITS images. 
 
@@ -21,7 +21,7 @@ The tool queries the **Gaia DR3** catalog for field star coordinates, extracts 2
 ## Repository Structure
 
 ```text
-create_PSF/
+create_UVIT_PSF/
 │
 ├── data/                       # Input UVIT FITS images (ignored by git)
 │   └── F148W_RD=.../           # Subdirectory containing target FITS image
@@ -45,8 +45,8 @@ create_PSF/
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/create_PSF.git
-cd create_PSF
+git clone https://github.com/YOUR_USERNAME/PSF.git
+cd create_UVIT_PSF
 ```
 
 ### 2. Install Dependencies
