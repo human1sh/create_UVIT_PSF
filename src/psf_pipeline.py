@@ -140,6 +140,7 @@ def _fit_and_select_psfs(stars, table, sky_bkg, pxs, output_dir, header, name):
     if 'SKY' not in header:
         header['SKY'] = sky_bkg
     for idx, star in enumerate(stars):
+        idx = idx + 1
         data = star.data
         fname = f"Star_{idx}"
         print(f"\n==================== Candidate Star #{idx} ====================")
