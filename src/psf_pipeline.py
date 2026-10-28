@@ -71,15 +71,13 @@ def process_uvit_image(fits_path, output_dir="output", cutout_size=81, max_candi
     sky_bkg = img_hdr.get('SKY', np.nanmedian(img_data))
     threshold = 20 * sky_bkg
     print(f"[+] Detecting candidate stars via IRAFStarFinder (Threshold: {threshold:.4f})...")
-    iraf = IRAFStarFinder(
-        xycoords=xy_coords,
-        fwhm=3.5,
-        threshold=threshold,
-        exclude_border=True,
-        roundness_range=(0.0, 2.0),
-        sharpness_range=(0.0, 2.0),
-        n_brightest=max_candidates
-    )
+    iraf = IRAFStarFinder(xycoords=xy_coords,
+                            fwhm=3.5,
+                            threshold=threshold,
+                            exclude_border=True,
+                            roundness_range=(0.0, 2.0),
+                            sharpness_range=(0.0, 2.0),
+                            n_brightest=max_candidates)
     df = iraf(img_data)
     if df is None or len(df) == 0:
         print("[-] No valid star candidates found matching criteria.")
