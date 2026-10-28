@@ -1,0 +1,8 @@
+# Python caches
+__pycache__/
+*.pyc
+
+# Local runtime directories
+data/
+output/
+.vscode/
