@@ -67,7 +67,7 @@ photutils
 
 ## Quick Start / Usage
 
-Place your input UVIT FITS files into the `data/` directory in the format : {Filter}_RD={RA},{DEC}/{Filter}_RD={RA},{DEC}.fits, where RA and DEC is the coordinates of the center of the image
+Place your input UVIT FITS files into the `data/` directory in the format : `{Filter}_RD={RA},{DEC}/{Filter}_RD={RA},{DEC}.fits`, where RA and DEC is the coordinates of the center of the image
 
 ### Running the Pipeline
 
