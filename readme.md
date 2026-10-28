@@ -1,4 +1,4 @@
-# UVIT PSF Extractor (`create_PSF`)
+# UVIT PSF Extractor (`create_UVIT_PSF`)
 
 An automated Python pipeline built to extract, analyze, and select Point Spread Functions (PSFs) from **UVIT (Ultra Violet Imaging Telescope)** FUV and NUV FITS images. 
 
@@ -21,18 +21,14 @@ The tool queries the **Gaia DR3** catalog for field star coordinates, extracts 2
 ## Repository Structure
 
 ```text
-create_PSF/
-│
+create_UVIT_PSF/
 ├── data/                       # Input UVIT FITS images (ignored by git)
 │   └── F148W_RD=.../           # Subdirectory containing target FITS image
-│
 ├── output/                     # Saved output FITS cutouts & PNG plots (ignored by git)
-│
 ├── src/
 │   ├── __init__.py
 │   ├── config.py               # Environment setups & Matplotlib styling
 │   └── uvit_psf_pipeline.py    # Main PSF extraction & fitting pipeline
-│
 ├── main.py                     # Command-line entry point
 ├── .gitignore                  # Git ignore definitions
 ├── requirements.txt            # Python dependencies
@@ -45,8 +41,8 @@ create_PSF/
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/create_PSF.git
-cd create_PSF
+git clone https://github.com/YOUR_USERNAME/PSF.git
+cd create_UVIT_PSF
 ```
 
 ### 2. Install Dependencies
@@ -71,7 +67,7 @@ photutils
 
 ## Quick Start / Usage
 
-Place your input UVIT FITS files into the `data/` directory.
+Place your input UVIT FITS files into the `data/` directory in the format : `{Filter}_RD={RA},{DEC}/{Filter}_RD={RA},{DEC}.fits`, where RA and DEC is the coordinates of the center of the image
 
 ### Running the Pipeline
 
@@ -119,8 +115,8 @@ python main.py --filename data/F148W_RD=217.532,63.855/F148W_RD=217.532,63.855.f
 
 For every accepted candidate, the code saves a high-resolution 2-panel figure formatted as follows:
 - **Top Panel**: Radial flux profile (log scale) showing the raw PSF data, total best-fit model, Moffat component, Exponential tail component, sky background RMS, and an inset thumbnail of the star image.
-- **Bottom Panel**: Fractional residual profile $\frac{\text{Flux}_{\text{data}} - \text{Flux}_{\text{model}}}{\text{Flux}_{\text{data}}}$.
-
+- **Bottom Panel**: Fractional residual profile: $\frac{\text{Flux}_{\text{data}} - \text{Flux}_{\text{model}}}{\text{Flux}_{\text{data}}}$
+  
 ---
 
 ## License
