@@ -1,8 +1,8 @@
 # UVIT PSF Extractor (`create_UVIT_PSF`)
 
-An automated Python pipeline built to extract, analyze, and select Point Spread Functions (PSFs) from **UVIT (Ultra Violet Imaging Telescope)** FUV and NUV FITS images. 
+An automated Python pipeline built to extract, analyze, and select Point Spread Functions (PSFs) from **UVIT (Ultra Violet Imaging Telescope)** FUV and NUV FITS images. The tool queries the **Gaia DR3** catalog for field star coordinates, extracts 2D cutouts, performs 1D isophotal fitting using a combined **Moffat + Exponential profile**, and provides an interactive visual environment for reviewing and selecting high-quality PSF candidates.
 
-The tool queries the **Gaia DR3** catalog for field star coordinates, extracts 2D cutouts, performs 1D isophotal fitting using a combined **Moffat + Exponential profile**, and provides an interactive visual environment for reviewing and selecting high-quality PSF candidates.
+I originally developed this pipeline in mid-2023 as an automated utility to select and construct Point Spread Function (PSF) models for Near-Ultraviolet (NUV) and Far-Ultraviolet (FUV) band observations. Its primary goal was to facilitate accurate PSF homogenization and resolution matching across UV data and optical DECaLS ($g$ and $r$-band) images. 
 
 ---
 
